@@ -5,10 +5,11 @@ metadata:
   namespace: webapp
   annotations:
     nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.webapp.svc.cluster.local:4180/oauth2/auth"
-    nginx.ingress.kubernetes.io/auth-signin: "http://localhost/oauth2/start?rd=$request_uri"
+    nginx.ingress.kubernetes.io/auth-signin: "https://verbose-space-zebra-6pj46ppq9643rg7g-8080.app.github.dev/oauth2/start?rd=$request_uri"
 spec:
+  ingressClassName: nginx
   rules:
-    - host: localhost
+    - host: verbose-space-zebra-6pj46ppq9643rg7g-8080.app.github.dev
       http:
         paths:
           - path: /
