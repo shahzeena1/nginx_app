@@ -39,7 +39,7 @@ Make sure the following are installed and configured:
 
 ---
 
-## 🔐 Secret Management using SOPS
+##  Secret Management using SOPS
 
 To manage secrets securely using SOPS:
 
@@ -50,24 +50,24 @@ Encrypt only the sensitive part (e.g., `clientID`, `clientSecret`, `cookieSecret
 ```bash
 sops -e --output values.enc.yaml values.yaml
 sops -d values.enc.yaml > values.yaml
-
-Install Chart
-Option 1: Install with Helm (for local dev)
-
+```
+## Install Chart
+### Option 1: Install with Helm (for local dev)
+```
 helm repo add nginx_app https://github.com/shahzeena1/nginx_app
 helm install webapp ./charts/webapp -f values.yaml
-
-Option 2: Install with Argo CD (GitOps)
+```
+## Option 2: Install with Argo CD (GitOps)
 Ensure Argo CD is running, then apply the Argo CD Application manifest:
-
+```
 kubectl apply -f argocd-app.yaml
-
-If using Minikube or kind:
-Port Forward to OAuth2 Proxy:
-
+```
+## Testing, If using Minikube or kind:
+### Port Forward to OAuth2 Proxy:
+```
 kubectl port-forward svc/oauth2-proxy 4180:4180
-
-Visit in Browser:
-
+```
+### Visit in Browser:
+```
 http://localhost:4180
-
+```
