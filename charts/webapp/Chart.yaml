@@ -1,4 +1,4 @@
 apiVersion: v2
 name: nginx
-description: NGINX webapp
+description: nginx auth webapp
 version: 0.1.0

@@ -1,0 +1,15 @@
+webapp:
+  image: nginx
+  replicas: 1
+  port: 80
+
+oauth2Proxy:
+  image: quay.io/oauth2-proxy/oauth2-proxy:v7.6.0
+  replicas: 1
+  clientID: "Ov23lizkKx5qN5gyokQ6"
+  clientSecret: "a0783660048465679b185c85e4a894156a232ae4"
+  cookieSecret: "vLgLaYux9vMnK3Fwctm7l9Pqlu3Qe9lEvMx6jQJxaYo="
+  redirectUrl: "http://localhost:4180/oauth2/callback"
+  nodePort: 30245
+
+domain: localhost

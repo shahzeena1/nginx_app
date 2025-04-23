@@ -1,9 +1,0 @@
-image:
-  repository: nginx
-  tag: stable
-replicaCount: 1
-namespace: webapp
-service:
-  type: NodePort
-  port: 80
-ingress:
